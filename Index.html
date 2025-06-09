@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aviator Predictor</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: #333;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #0047AB, #007BFF);
+      width: 100%;
+      padding: 2rem;
+      text-align: center;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .plane {
+      max-width: 150px;
+      margin: 2rem auto;
+    }
+
+    .circle {
+      border: 5px solid #007BFF;
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+
+    .button {
+      background: #007BFF;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">Aviator Predictor</div>
+  <img src="https://img.icons8.com/ios-filled/100/ffffff/airplane-take-off.png" class="plane" alt="Plane Icon" />
+  <div class="circle" id="prediction">0.00x</div>
+  <button class="button" onclick="predict()">Next</button>
+
+  <script>
+    function predict() {
+      const random = (Math.random() * 3 + 1).toFixed(2);
+      document.getElementById('prediction').innerText = `${random}x`;
+    }
+  </script>
+</body>
+</html>
